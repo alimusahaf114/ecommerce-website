@@ -3,21 +3,23 @@ import {Link} from "react-router-dom"
 import * as FaIcons from 'react-icons/fa'
 import { RiCloseLargeFill } from "react-icons/ri";
 import { SidebarData } from './SidebarData';
-
+import "./Navbar.css"
+import { IconContext } from 'react-icons';
 function Navbar() {
    const [sidebar , setSideBar] =  useState(false)
    const showSidebar = () => setSideBar(!sidebar)
   return (
     <>
+    <IconContext.Provider value={{color: 'white'}}>
     <div className="navbar">
     <Link to="#" className="menu-bars">
         <FaIcons.FaBars onClick={showSidebar}/>
     </Link>
     
     </div>
-    <nav className={sidebar ? 'nav-menu-active' : 'nav-menu'}>
+    <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
         <ul className="nav-menu-items">
-        <li className="navbar-toggle">
+        <li className="navbar-toggle" onClick={showSidebar}>
             <Link to="#">
             <RiCloseLargeFill />
             </Link>
@@ -36,7 +38,7 @@ function Navbar() {
         }
         </ul>
     </nav>
-      
+      </IconContext.Provider>
     </>
   )
 }

@@ -8,7 +8,7 @@ export const SidebarData = [
         title: 'Home',
         path: "/",
         icon: <AiIcons.AiFillHome/>,
-        cName: 'nav-tx`ext'
+        cName: 'nav-text'
     },
     {
         title: 'Report',
@@ -41,4 +41,4 @@ export const SidebarData = [
         cName: 'nav-text'
     },
 
-]
+] 
